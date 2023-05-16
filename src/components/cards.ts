@@ -1,17 +1,14 @@
-import { King } from './king';
 import { Component } from './component';
-import { Squire } from './squire';
-import { Advisor } from './advisor';
-import { Fighter } from './fighter';
+import { AllTypes } from '../types/types';
 export class Card extends Component {
-  constructor(selector: string, character: King | Squire | Advisor | Fighter) {
+  constructor(selector: string, character: AllTypes) {
     super(selector);
     this.template = this.createTemplate(character);
     this.render();
   }
 
-  createTemplate(character: King | Squire | Advisor | Fighter) {
-    const checkDifferences = (character: King | Squire | Advisor | Fighter) => {
+  createTemplate(character: AllTypes) {
+    const checkDifferences = (character: AllTypes) => {
       if ('kingYears' in character) {
         return `<li>Años de reinado: ${character.kingYears}</li>`;
       }
@@ -31,7 +28,7 @@ export class Card extends Component {
       }
     };
 
-    const renderEmojis = (character: King | Squire | Advisor | Fighter) => {
+    const renderEmojis = (character: AllTypes) => {
       if ('kingYears' in character) {
         return `<i class="emoji">👑</i>`;
       }
@@ -62,7 +59,7 @@ export class Card extends Component {
             <div class="character__info">
               <ul class="list-unstyled">
                 <li>Edad: ${character.age}</li>
-                <li>
+                <li class="character-status>
                   Estado:
                   <i class="fas fa-thumbs-down"></i>
                   <i class="fas fa-thumbs-up"></i>
