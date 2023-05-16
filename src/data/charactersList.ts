@@ -1,7 +1,7 @@
-import { King } from './king';
-import { Advisor } from './advisor';
-import { Fighter } from './fighter';
-import { Squire } from './squire';
+import { King } from '../components/king';
+import { Advisor } from '../components/advisor';
+import { Fighter } from '../components/fighter';
+import { Squire } from '../components/squire';
 
 export const character1 = new King('Joffrey', 'Baratheon', 20, 2);
 export const character2 = new Fighter('Jaime', 'Lannister', 40, 'espada', 8);

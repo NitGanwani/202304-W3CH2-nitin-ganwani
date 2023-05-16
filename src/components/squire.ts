@@ -1,5 +1,5 @@
 /* eslint-disable max-params */
-import { Character } from './character';
+import { Character } from './components/character';
 
 export class Squire extends Character {
   served;
