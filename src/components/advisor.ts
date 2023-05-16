@@ -1,4 +1,4 @@
-import { Character } from './character';
+import { Character } from '../models/character';
 
 export class Advisor extends Character {
   advisedCharacter;

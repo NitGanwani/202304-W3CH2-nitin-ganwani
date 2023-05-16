@@ -1,7 +1,12 @@
+/* eslint-disable no-new */
 import './style.css';
-import { allCharacters } from './charactersList';
+import { List } from './components/cardsList';
+import { Card } from './components/cards';
 
-const temp: HTMLUListElement = document.querySelector('.characters-list')!;
+new List('.app');
+new Card('.characters-list');
+
+/* Const temp: HTMLUListElement = document.querySelector('.characters-list')!;
 
 const kingTemplate = `<li class="character col">
     <div class="card character__card">
@@ -177,3 +182,4 @@ temp.innerHTML =
   fighterTemplate2 +
   advisorTemplate +
   squireTemplate;
+ */

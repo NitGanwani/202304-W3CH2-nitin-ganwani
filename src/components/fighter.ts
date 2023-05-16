@@ -1,5 +1,5 @@
 /* eslint-disable max-params */
-import { Character } from './character';
+import { Character } from '../models/character';
 
 export class Fighter extends Character {
   weapon;
