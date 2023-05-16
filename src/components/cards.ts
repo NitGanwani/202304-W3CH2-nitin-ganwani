@@ -1,44 +1,87 @@
+import { King } from './king';
 import { Component } from './component';
-
+import { Squire } from './squire';
+import { Advisor } from './advisor';
+import { Fighter } from './fighter';
 export class Card extends Component {
-  constructor(selector: string) {
+  constructor(selector: string, character: King | Squire | Advisor | Fighter) {
     super(selector);
-    this.template = this.createTemplate();
+    this.template = this.createTemplate(character);
     this.render();
   }
 
-  createTemplate() {
-    return `<li class="character col">
-    <div class="card character__card">
-      <img src="/joffrey.jpg" alt="Joffrey Baratheon" class="character__picture card-img-top" />
-      <div class="card-body">
-        <h2 class="character__name card-title h4"></h2>
-        <div class="character__info">
-          <ul class="list-unstyled">
-            <li>Edad:  años</li>
-            <li>
-              Estado:
-              <i class="fas fa-thumbs-down"></i>
-              <i class="fas fa-thumbs-up"></i>
-            </li>
-          </ul>
-        </div>
-        <div class="character__overlay">
-          <ul class="list-unstyled">
-            <li>Años de reinado: </li>
-          </ul>
-          <div class="character__actions">
-            <button class="character__action btn">habla</button>
-            <button class="character__action btn">muere</button>
+  createTemplate(character: King | Squire | Advisor | Fighter) {
+    const checkDifferences = (character: King | Squire | Advisor | Fighter) => {
+      if ('kingYears' in character) {
+        return `<li>Años de reinado: ${character.kingYears}</li>`;
+      }
+
+      if ('advisedCharacter' in character) {
+        return `<li>Asesora a: ${character.advisedCharacter}</li>`;
+      }
+
+      if ('weapon' in character) {
+        return `<li>Arma: ${character.weapon}</li>
+              <li>Destreza: ${character.skill}</li>`;
+      }
+
+      if ('flattery' in character) {
+        return `<li>Peloteo: ${character.flattery}</li>
+        <li>Sirve a: ${character.served}</li>`;
+      }
+    };
+
+    const renderEmojis = (character: King | Squire | Advisor | Fighter) => {
+      if ('kingYears' in character) {
+        return `<i class="emoji">👑</i>`;
+      }
+
+      if ('advisedCharacter' in character) {
+        return `<i class="emoji">🎓</i>`;
+      }
+
+      if ('weapon' in character) {
+        return `<i class="emoji">🗡</i>`;
+      }
+
+      if ('flattery' in character) {
+        return `<i class="emoji">🛡</i>`;
+      }
+    };
+
+    return `
+      <li class="character col">
+        <div class="card character__card">
+          <img src="/${character.name.toLowerCase()}.jpg" alt="${
+      character.name
+    } ${character.house}" class="character__picture card-img-top" />
+          <div class="card-body">
+            <h2 class="character__name card-title h4">${character.name} ${
+      character.house
+    }</h2>
+            <div class="character__info">
+              <ul class="list-unstyled">
+                <li>Edad: ${character.age}</li>
+                <li>
+                  Estado:
+                  <i class="fas fa-thumbs-down"></i>
+                  <i class="fas fa-thumbs-up"></i>
+                </li>
+              </ul>
+            </div>
+            <div class="character__overlay">
+              <ul class="list-unstyled">
+              ${checkDifferences(character)}
+              </ul>
+              <div class="character__actions">
+                <button class="character__action btn">habla</button>
+                <button class="character__action btn">muere</button>
+              </div>
+            </div>
           </div>
+          ${renderEmojis(character)}
         </div>
-      </div>
-      <i class="emoji">👑</i>
-    </div>
-  </li>
-  <div class="comunications">
-      <p class="comunications__text display-1">Una frase que dice alguien</p>
-      <img class="comunications__picture" src="/public/no-one.jpg" alt="Nombre y familia del que habla" />
-    </div>`;
+      </li>
+    `;
   }
 }
