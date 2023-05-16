@@ -10,8 +10,8 @@ export const createCharacters = () => {
   const character1 = new King('Joffrey', 'Baratheon', 20, 2);
   const character2 = new Fighter('Jaime', 'Lannister', 40, 'espada', 8);
   const character3 = new Fighter('Daenerys', 'Targaryen', 21, 'dragon', 9);
-  const character4 = new Advisor('Tyrion', 'Lannister', 32, 'Daenerys');
-  const character5 = new Squire('Bronn', 'Desconocido', 43, 'Jaime', 8);
+  const character4 = new Advisor('Tyrion', 'Lannister', 32, character3);
+  const character5 = new Squire('Bronn', 'Desconocido', 43, character2, 8);
 
   allCharacters.push(
     character1,
