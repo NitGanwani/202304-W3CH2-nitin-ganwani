@@ -5,7 +5,7 @@ const temp: HTMLUListElement = document.querySelector('.characters-list')!;
 
 const kingTemplate = `<li class="character col">
     <div class="card character__card">
-      <img src="/images/joffrey.jpg" alt="Joffrey Baratheon" class="character__picture card-img-top" />
+      <img src="/joffrey.jpg" alt="Joffrey Baratheon" class="character__picture card-img-top" />
       <div class="card-body">
         <h2 class="character__name card-title h4">${allCharacters[0].name} ${allCharacters[0].house}</h2>
         <div class="character__info">
@@ -38,7 +38,7 @@ const kingTemplate = `<li class="character col">
 
 const fighterTemplate1 = `<li class="character col">
     <div class="card character__card">
-      <img src="/images/jaime.jpg" alt="Jaime Lannister" class="character__picture card-img-top" />
+      <img src="/jaime.jpg" alt="Jaime Lannister" class="character__picture card-img-top" />
       <div class="card-body">
         <h2 class="character__name card-title h4">${allCharacters[1].name} ${allCharacters[1].house}</h2>
         <div class="character__info">
@@ -72,7 +72,7 @@ const fighterTemplate1 = `<li class="character col">
 
 const fighterTemplate2 = `<li class="character col">
     <div class="card character__card">
-      <img src="/images/daenerys.jpg" alt="Daenerys Targaryen" class="character__picture card-img-top" />
+      <img src="/daenerys.jpg" alt="Daenerys Targaryen" class="character__picture card-img-top" />
       <div class="card-body">
         <h2 class="character__name card-title h4">${allCharacters[2].name} ${allCharacters[2].house}</h2>
         <div class="character__info">
@@ -106,7 +106,7 @@ const fighterTemplate2 = `<li class="character col">
 
 const advisorTemplate = `<li class="character col">
     <div class="card character__card">
-      <img src="/images/tyrion.jpg" alt="Tyrion Lannister" class="character__picture card-img-top" />
+      <img src="/tyrion.jpg" alt="Tyrion Lannister" class="character__picture card-img-top" />
       <div class="card-body">
         <h2 class="character__name card-title h4">${allCharacters[3].name} ${allCharacters[3].house}</h2>
         <div class="character__info">
@@ -139,7 +139,7 @@ const advisorTemplate = `<li class="character col">
 
 const squireTemplate = `<li class="character col">
     <div class="card character__card">
-      <img src="/images/bronn.jpg" alt="Bronn" class="character__picture card-img-top" />
+      <img src="/bronn.jpg" alt="Bronn" class="character__picture card-img-top" />
       <div class="card-body">
         <h2 class="character__name card-title h4">${allCharacters[4].name} ${allCharacters[4].house}</h2>
         <div class="character__info">
