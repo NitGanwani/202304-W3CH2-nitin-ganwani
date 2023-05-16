@@ -1,6 +1,5 @@
 import './style.css';
 import { allCharacters } from './charactersList';
-import { King } from './king';
 
 const temp: HTMLUListElement = document.querySelector('.characters-list')!;
 
