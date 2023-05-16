@@ -8,6 +8,8 @@ export class List extends Component {
   }
 
   createTemplate() {
-    return '';
+    return `
+    <ul class="characters-list row list-unstyled">
+    </ul>`;
   }
 }

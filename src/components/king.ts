@@ -1,4 +1,4 @@
-import { Character } from './components/character';
+import { Character } from '../models/character';
 
 export class King extends Character {
   kingYears;
